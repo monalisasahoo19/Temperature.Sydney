@@ -1,0 +1,16 @@
+{
+  "name": "temperature.sydney",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "install": "^0.12.2",
+    "mocha": "^6.0.2",
+    "npm": "^6.8.0"
+  }
+}
