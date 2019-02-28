@@ -13,7 +13,6 @@ describe('Monthly average temperature data for Sydney with csv format for 2018',
         //Derive the Spread Column and append it
          weatherJSONList.map((weather) => {
             weather.spread =  (parseFloat(weather.meanMaximum) - parseFloat(weather.meanMinimum)).toFixed(2);
-            return weather
         });
 
         //Find the smallest spread element from the 'spreadWeatherJSON' array
