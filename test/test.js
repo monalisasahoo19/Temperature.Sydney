@@ -8,20 +8,16 @@ describe('Monthly average temperature data for Sydney with csv format for 2018',
         let sanitisedCSVContent = await csvHelper.sanitize('data/sydney-temperatures.csv');
 
         //Convert the Sanitise csv content and parse it to JSON format
-        let weatherJSON = csvHelper.convertToJson(sanitisedCSVContent);
+        let weatherJSONList = csvHelper.convertToJson(sanitisedCSVContent);
 
-        //Derive the Spread Column and store in a new JSON variable
-        let spreadWeatherJSON = weatherJSON.map((weather) => {
-            return {
-                month: weather.month,
-                meanMaximum: parseFloat(weather.meanMaximum),
-                meanMinimum: parseFloat(weather.meanMinimum),
-                spread: (parseFloat(weather.meanMaximum) - parseFloat(weather.meanMinimum)).toFixed(2)
-            }
+        //Derive the Spread Column and append it
+         weatherJSONList.map((weather) => {
+            weather.spread =  (parseFloat(weather.meanMaximum) - parseFloat(weather.meanMinimum)).toFixed(2);
+            return weather
         });
 
         //Find the smallest spread element from the 'spreadWeatherJSON' array
-        let smallestSpread = spreadWeatherJSON.reduce((min, item) => (item.spread > min.spread) ? min : item, {});
+        let smallestSpread = weatherJSONList.reduce((min, item) => (item.spread > min.spread) ? min : item, {});
 
         //Display the smallest spread element
         console.log(smallestSpread);
