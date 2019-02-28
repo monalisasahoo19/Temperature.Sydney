@@ -20,6 +20,8 @@ of the csv file.
 - Please provide detailed instructions (incl. environment details) on how
 to run the program and the tests.
 
+### Dependencies 
+* [mochajs] - Mocha is a feature-rich JavaScript test framework running on Node.js
 
 ### How to run the test in your local machine?
 
@@ -69,3 +71,4 @@ to run the program and the tests.
   [node.js]: <http://nodejs.org>
   [sydney-temperature.csv]: <https://github.com/monalisasahoo19/Temperature.Sydney/blob/master/data/sydney-temperatures.csv>
   [test output]:<https://circleci.com/gh/monalisasahoo19/Temperature.Sydney/1>
+  [mochajs]:<https://mochajs.org>
